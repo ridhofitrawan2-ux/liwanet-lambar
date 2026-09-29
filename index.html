@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIWA NET — Solusi Komputer & Teknologi di Lampung Barat</title>
+<meta name="description" content="Jual beli laptop baru & second, service laptop & printer, serta kebutuhan komputer di Sebarus, Balik Bukit, Lampung Barat.">
+<meta name="theme-color" content="#0B1120">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563EB'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='bold' font-size='13' fill='white' text-anchor='middle'%3ELN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* ============ DASAR ============ */
+:root{
+  --bg:#0B1120; --surface:#111827; --surface2:#151F31; --field:#0D1526;
+  --line:#1F2A3C; --line2:#2A3752;
+  --text:#F8FAFC; --muted:#94A3B8; --dim:#64748B;
+  --primary:#2563EB; --primary-h:#3B82F6; --primary-soft:rgba(37,99,235,.13);
+  --ok:#10B981; --ok-soft:rgba(16,185,129,.14);
+  --warn:#F59E0B; --warn-soft:rgba(245,158,11,.14);
+  --bad:#EF4444; --bad-soft:rgba(239,68,68,.14);
+  --wa:#16A34A; --wa-h:#22C55E;
+  --r:16px; --r-sm:10px;
+  --font:'Inter',system-ui,sans-serif; --disp:'Space Grotesk',sans-serif;
+  --shadow:0 14px 40px rgba(2,6,23,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
+::selection{background:var(--primary);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#243149;border-radius:8px;border:2px solid var(--bg)}
+::-webkit-scrollbar-track{background:var(--bg)}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:14px;color:var(--text)}
+:focus-visible{outline:2px solid var(--primary-h);outline-offset:2px;border-radius:4px}
+.container{width:min(1180px,100% - 40px);margin-inline:auto}
+section{scroll-margin-top:80px}
+.lucide{width:18px;height:18px;flex:none}
+
+/* ============ TIPOGRAFI ============ */
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em;line-height:1.18;font-weight:700}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-h)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--primary)}
+.sec-head{margin-bottom:36px}
+.sec-head h2{font-size:clamp(26px,3.6vw,38px);margin:12px 0 10px}
+.sec-head p{color:var(--muted);max-width:600px}
+
+/* ============ TOMBOL ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:14px;padding:12px 22px;border-radius:12px;transition:.22s;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-h);transform:translateY(-2px);box-shadow:0 10px 26px rgba(37,99,235,.32)}
+.btn-ghost{border:1px solid var(--line2);color:var(--text);background:transparent}
+.btn-ghost:hover{border-color:#3E4E6E;background:var(--surface2);transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-h);transform:translateY(-2px);box-shadow:0 10px 26px rgba(22,163,74,.3)}
+.btn-sm{padding:9px 16px;font-size:13px;border-radius:10px}
+
+/* ============ NAVBAR ============ */
+.nav{position:fixed;inset:0 0 auto;z-index:90;transition:.3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(11,17,32,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:26px;height:70px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.01em}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--primary-soft);border:1px solid rgba(37,99,235,.4);display:grid;place-items:center;color:var(--primary-h)}
+.logo-mark .lucide{width:17px;height:17px}
+.logo span{color:var(--primary-h)}
+.nav-links{display:flex;gap:4px;margin-left:auto}
+.nav-link{padding:8px 13px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted);transition:.2s;position:relative}
+.nav-link:hover{color:var(--text)}
+.nav-link.active{color:var(--text)}
+.nav-link.active::after{content:"";position:absolute;left:13px;right:13px;bottom:2px;height:2px;background:var(--primary);border-radius:2px}
+.nav-cta{margin-left:6px}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line2);border-radius:10px;place-items:center;color:var(--text)}
+.m-menu{display:none;position:fixed;top:70px;left:0;right:0;z-index:89;background:rgba(11,17,32,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 20px 18px;flex-direction:column}
+.m-menu.open{display:flex}
+.m-menu a{padding:13px 8px;border-bottom:1px solid var(--line);font-weight:500;color:var(--muted)}
+.m-menu a:last-child{border:none}
+@media(max-width:900px){.nav-links,.nav-cta{display:none}.burger{display:grid}}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:150px 0 76px;background-image:radial-gradient(circle,rgba(148,163,184,.07) 1px,transparent 1px);background-size:30px 30px}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 70% 18%,rgba(37,99,235,.07),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;gap:56px;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}}
+.hero h1{font-size:clamp(34px,5.4vw,56px);margin:20px 0 18px}
+.hero h1 .hl{position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:7px;background:var(--primary);opacity:.32;border-radius:3px;z-index:-1}
+.hero-sub{color:var(--muted);font-size:clamp(15px,1.6vw,17px);max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-proof{display:flex;align-items:center;gap:10px;margin-top:26px;color:var(--muted);font-size:13.5px}
+.hero-proof .stars{display:flex;gap:2px;color:var(--warn)}
+.hero-proof .stars .lucide{width:14px;height:14px;fill:currentColor}
+
+/* Laptop hero (boot) */
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-laptop{width:min(540px,100%);filter:drop-shadow(0 30px 50px rgba(2,6,23,.6))}
+.hl-lid{border:1px solid var(--line2);background:#1B2537;border-radius:16px 16px 4px 4px;padding:12px 12px 14px}
+.hl-screen{background:#070E1C;border-radius:8px;aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden;position:relative}
+.hl-screen::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(148,163,184,.06) 1px,transparent 1px);background-size:22px 22px}
+.hl-camera{position:absolute;top:8px;left:50%;width:4px;height:4px;border-radius:50%;background:#334155;transform:translateX(-50%)}
+.hl-boot{text-align:center;transform:translateY(6px)}
+.hl-logo{font-family:var(--disp);font-weight:700;font-size:clamp(22px,4.4vw,34px);letter-spacing:.02em;opacity:0;transform:scale(.92);transition:.7s cubic-bezier(.2,.8,.2,1)}
+.hl-logo.on{opacity:1;transform:scale(1)}
+.hl-logo span{color:var(--primary-h)}
+.hl-bar{width:150px;height:3px;background:#1E293B;border-radius:3px;margin:16px auto 12px;overflow:hidden;opacity:0;transition:.4s}
+.hl-bar.on{opacity:1}
+.hl-bar i{display:block;height:100%;width:0;background:var(--primary);border-radius:3px;transition:width 2.4s cubic-bezier(.3,.7,.3,1)}
+.hl-bar.run i{width:100%}
+.hl-msg{font-size:12px;color:var(--dim);letter-spacing:.08em;opacity:0;transition:.5s;display:flex;align-items:center;justify-content:center;gap:7px;min-height:20px}
+.hl-msg.on{opacity:1}
+.hl-msg.done{color:var(--ok)}
+.hl-msg .lucide{width:14px;height:14px}
+.hl-base{height:16px;background:linear-gradient(#26324B,#1B2537);border-radius:2px 2px 12px 12px;position:relative;margin:0 -18px}
+.hl-base::after{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:76px;height:5px;background:#141D31;border-radius:0 0 8px 8px}
+.chips{position:absolute;inset:0;pointer-events:none}
+.chip{pointer-events:auto;position:absolute;display:flex;align-items:center;gap:9px;background:rgba(17,24,39,.92);border:1px solid var(--line2);border-radius:12px;padding:10px 15px;font-size:13px;font-weight:600;box-shadow:var(--shadow);animation:float 5.5s ease-in-out infinite alternate;transition:border-color .2s}
+.chip:hover{border-color:var(--primary)}
+.chip .lucide{width:16px;height:16px;color:var(--primary-h)}
+.chip.ok .lucide{color:var(--ok)}
+.c1{top:2%;left:-4%}.c2{top:30%;right:-6%;animation-delay:1.2s}.c3{bottom:22%;left:-8%;animation-delay:.6s}.c4{bottom:-2%;right:-2%;animation-delay:1.8s}
+@keyframes float{from{transform:translateY(-7px)}to{transform:translateY(7px)}}
+@media(max-width:1023px){
+  .chips{position:static;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+  .chip{position:static;animation:none;justify-content:flex-start}
+}
+
+/* ============ MARQUEE BRAND ============ */
+.marq{border-block:1px solid var(--line);padding:16px 0;overflow:hidden}
+.marq-track{display:flex;gap:56px;width:max-content;animation:marq 30s linear infinite}
+.marq:hover .marq-track{animation-play-state:paused}
+.marq span{font-family:var(--disp);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#475569;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.marq span::after{content:"";width:4px;height:4px;border-radius:50%;background:#243149}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ============ QUICK SERVICE ============ */
+.quick{padding:76px 0}
+.q-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:900px){.q-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+.q-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:.25s;position:relative;overflow:hidden;text-align:left}
+.q-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.55);box-shadow:var(--shadow)}
+.q-ico{width:46px;height:46px;border-radius:12px;background:var(--primary-soft);border:1px solid rgba(37,99,235,.35);display:grid;place-items:center;color:var(--primary-h);transition:.25s}
+.q-card:hover .q-ico{background:var(--primary);color:#fff}
+.q-card h3{font-size:16.5px}
+.q-card p{font-size:13px;color:var(--muted);flex:1}
+.q-go{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--primary-h)}
+.q-go .lucide{width:14px;height:14px;transition:.25s}
+.q-card:hover .q-go .lucide{transform:translateX(4px)}
+
+/* ============ KATALOG ============ */
+.katalog{padding:86px 0;background:var(--surface);border-block:1px solid var(--line)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.fchip{padding:8px 16px;border-radius:99px;border:1px solid var(--line2);font-size:13px;font-weight:500;color:var(--muted);transition:.2s;background:transparent}
+.fchip:hover{color:var(--text);border-color:#3E4E6E}
+.fchip.active{background:var(--primary);border-color:var(--primary);color:#fff;font-weight:600}
+.f-chips{display:flex;flex-wrap:wrap;gap:8px}
+.f-lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);font-weight:600;align-self:center;margin-right:4px}
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--field);border:1px solid var(--line2);border-radius:12px;padding:11px 16px;max-width:420px;transition:.2s}
+.searchbar:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.searchbar .lucide{color:var(--dim)}
+.searchbar input{background:none;border:none;outline:none;flex:1;font-size:14px}
+.searchbar input::placeholder{color:var(--dim)}
+.f-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.result-meta{font-size:13px;color:var(--dim);margin:14px 0 18px}
+.result-meta b{color:var(--text);font-weight:600}
+.p-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:760px){.p-grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+@media(min-width:1150px){.p-grid{grid-template-columns:repeat(4,1fr)}}
+.p-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.25s;animation:cardIn .5s both}
+.p-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.5);box-shadow:var(--shadow)}
+.p-card.is-sold{opacity:.62}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.p-art{position:relative;aspect-ratio:32/21;background:#0D1526;border-bottom:1px solid var(--line);display:grid;place-items:center;padding:10px}
+.p-art svg{width:100%;height:auto}
+.badge{position:absolute;top:10px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;display:inline-flex;align-items:center;gap:5px}
+.badge .lucide{width:11px;height:11px}
+.b-second{left:10px;background:var(--ok-soft);color:var(--ok);border:1px solid rgba(16,185,129,.35)}
+.b-status{right:10px}
+.st-ready{background:var(--ok-soft);color:var(--ok);border:1px solid rgba(16,185,129,.35)}
+.st-limited{background:var(--warn-soft);color:var(--warn);border:1px solid rgba(245,158,11,.35)}
+.st-sold{background:var(--bad-soft);color:var(--bad);border:1px solid rgba(239,68,68,.35)}
+.sold-tag{position:absolute;inset:auto 0 12px;text-align:center;font-family:var(--disp);font-weight:700;letter-spacing:.3em;font-size:13px;color:var(--bad);text-transform:uppercase}
+.p-body{padding:15px 16px 16px;display:flex;flex-direction:column;flex:1;gap:7px}
+.p-tags{display:flex;align-items:center;justify-content:space-between}
+.p-tag{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary-h)}
+.p-cmp{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--dim);padding:3px 8px;border-radius:7px;border:1px solid transparent;transition:.2s}
+.p-cmp .lucide{width:12px;height:12px}
+.p-cmp:hover{color:var(--text);border-color:var(--line2)}
+.p-cmp.active{color:var(--primary-h);background:var(--primary-soft);border-color:rgba(37,99,235,.4)}
+.p-card h3{font-size:15.5px;line-height:1.3}
+.p-cpu{font-size:12.5px;color:var(--muted)}
+.p-specs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin-top:2px}
+.p-specs li{font-size:11px;color:var(--dim);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-weight:500}
+.cond{margin-top:4px}
+.cond-top{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+.cond-top b{color:var(--ok);font-weight:600}
+.cond-bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.cond-bar i{display:block;height:100%;background:var(--ok);border-radius:4px}
+.p-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:12px}
+.p-price{font-family:var(--disp);font-weight:700;font-size:16.5px;letter-spacing:-.01em}
+.p-actions{display:flex;gap:7px}
+.btn-detail{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:9px;border:1px solid var(--line2);transition:.2s;color:var(--text)}
+.btn-detail:hover{border-color:var(--primary);background:var(--primary-soft)}
+.btn-tanya{width:34px;height:34px;border-radius:9px;background:var(--wa);color:#fff;display:grid;place-items:center;transition:.2s}
+.btn-tanya:hover{background:var(--wa-h);transform:translateY(-2px)}
+.btn-tanya .lucide{width:16px;height:16px}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+.empty .lucide{width:40px;height:40px;color:var(--dim);margin:0 auto 14px}
+.empty h3{font-size:17px;color:var(--text);margin-bottom:6px}
+
+/* ============ SECOND ============ */
+.second{padding:90px 0}
+.s-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:960px){.s-grid{grid-template-columns:1fr 1fr;gap:60px}}
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:24px 0 28px}
+.check-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.check-item .lucide{width:14px;height:14px;color:var(--ok)}
+.feat-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;cursor:pointer;position:relative}
+.feat-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.5);box-shadow:var(--shadow)}
+.feat-card .p-art{aspect-ratio:32/19;border-bottom:1px solid var(--line);background:#0D1526;position:relative}
+.feat-body{padding:20px 22px 22px}
+.feat-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.feat-note{display:flex;align-items:center;gap:9px;margin-top:16px;padding:12px 14px;background:var(--primary-soft);border:1px solid rgba(37,99,235,.3);border-radius:11px;font-size:12.5px;color:var(--muted)}
+.feat-note .lucide{width:15px;height:15px;color:var(--primary-h)}
+
+/* ============ SERVICE CENTER ============ */
+.service{padding:90px 0;background:var(--surface);border-block:1px solid var(--line)}
+.svc-grid{display:grid;gap:18px;margin-bottom:26px}
+@media(min-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+.svc-col{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px}
+.svc-col-head{display:flex;align-items:center;gap:13px;margin-bottom:20px}
+.svc-col-head .q-ico{width:42px;height:42px}
+.svc-col-head h3{font-size:18px}
+.svc-col-head p{font-size:12.5px;color:var(--dim)}
+.svc-items{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;list-style:none}
+@media(max-width:480px){.svc-items{grid-template-columns:1fr}}
+.svc-items li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);padding:9px 12px;border:1px solid var(--line);border-radius:9px;transition:.2s;background:var(--surface)}
+.svc-items li:hover{border-color:var(--line2);color:var(--text)}
+.svc-items .lucide{width:15px;height:15px;color:var(--primary-h)}
+.svc-perks{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:56px}
+@media(min-width:900px){.svc-perks{grid-template-columns:repeat(4,1fr)}}
+.perk{display:flex;align-items:center;gap:11px;font-size:13px;color:var(--muted);border:1px dashed var(--line2);border-radius:12px;padding:13px 15px}
+.perk .lucide{width:17px;height:17px;color:var(--ok)}
+.bk-grid{display:grid;gap:18px}
+@media(min-width:960px){.bk-grid{grid-template-columns:1.15fr .85fr;align-items:start}}
+.panel{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:26px 24px}
+@media(min-width:640px){.panel{padding:32px}}
+.panel-head{margin-bottom:22px}
+.panel-head h3{font-size:20px;margin-bottom:5px}
+.panel-head p{font-size:13px;color:var(--muted)}
+.f-grid{display:grid;gap:14px}
+@media(min-width:560px){.f-grid{grid-template-columns:1fr 1fr}.f-full{grid-column:1/-1}}
+.field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:7px;color:var(--muted)}
+.field label b{color:var(--bad)}
+.field input,.field select,.field textarea{width:100%;background:var(--field);border:1px solid var(--line2);border-radius:10px;padding:11px 14px;outline:none;transition:.2s}
+.field textarea{resize:vertical;min-height:88px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:38px}
+.field.err input,.field.err select,.field.err textarea{border-color:var(--bad)}
+.err-msg{display:none;font-size:11.5px;color:var(--bad);margin-top:5px}
+.field.err .err-msg{display:block}
+.form-note{font-size:11.5px;color:var(--dim);display:flex;gap:7px;align-items:flex-start}
+.form-note .lucide{width:13px;height:13px;margin-top:2px}
+.bk-success{margin-top:16px;background:var(--ok-soft);border:1px solid rgba(16,185,129,.35);border-radius:12px;padding:16px;display:none}
+.bk-success.show{display:block}
+.bk-success h4{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ok);margin-bottom:8px;font-family:var(--disp)}
+.bk-success p{font-size:12.5px;color:var(--muted)}
+.svc-id-row{display:flex;align-items:center;gap:10px;margin:10px 0}
+.svc-id{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.06em;color:var(--text);background:var(--field);border:1px dashed var(--line2);padding:7px 14px;border-radius:9px}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--primary-h);padding:7px 12px;border:1px solid rgba(37,99,235,.4);border-radius:9px;transition:.2s}
+.copy-btn:hover{background:var(--primary-soft)}
+.copy-btn .lucide{width:13px;height:13px}
+
+/* Status */
+.status-input{display:flex;gap:9px}
+.status-input input{flex:1;background:var(--field);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;outline:none;font-family:var(--disp);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.status-input input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-soft)}
+.status-input input.shake{animation:shake .4s;border-color:var(--bad)}
+@keyframes shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+.status-hint{font-size:11.5px;color:var(--dim);margin-top:9px}
+.status-hint b{color:var(--primary-h);font-weight:600;cursor:pointer}
+.status-notfound{display:none;margin-top:16px;background:var(--bad-soft);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:14px;font-size:13px;color:var(--muted)}
+.status-notfound.show{display:block}
+.status-result{display:none;margin-top:22px}
+.status-result.show{display:block}
+.sr-device{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 15px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;flex-wrap:wrap}
+.sr-device b{font-family:var(--disp);font-size:14.5px}
+.sr-device span{font-size:11.5px;color:var(--dim)}
+.steps{list-style:none;position:relative}
+.steps li{position:relative;display:flex;gap:15px;padding-bottom:26px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:"";position:absolute;left:16px;top:36px;bottom:2px;width:2px;background:var(--line);border-radius:2px;transition:.3s}
+.steps li:last-child::before{display:none}
+.steps li.done::before,.steps li.current::before{background:var(--primary)}
+.step-dot{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line2);background:var(--field);display:grid;place-items:center;color:var(--dim);flex:none;transition:.3s;z-index:1}
+.step-dot .lucide{width:15px;height:15px}
+.steps li.done .step-dot{background:var(--primary);border-color:var(--primary);color:#fff}
+.steps li.current .step-dot{border-color:var(--primary);color:var(--primary-h);background:var(--primary-soft);box-shadow:0 0 0 5px var(--primary-soft)}
+.step-body{padding-top:5px}
+.step-body b{display:block;font-size:14px;font-weight:600;color:var(--dim)}
+.steps li.done .step-body b,.steps li.current .step-body b{color:var(--text)}
+.step-body span{font-size:12px;color:var(--dim)}
+.steps li.current .step-body span{color:var(--primary-h)}
+.steps li{opacity:0;transform:translateY(8px);animation:stepIn .45s forwards}
+.steps li:nth-child(1){animation-delay:.05s}.steps li:nth-child(2){animation-delay:.15s}.steps li:nth-child(3){animation-delay:.25s}.steps li:nth-child(4){animation-delay:.35s}.steps li:nth-child(5){animation-delay:.45s}.steps li:nth-child(6){animation-delay:.55s}
+@keyframes stepIn{to{opacity:1;transform:none}}
+.sr-note{margin-top:20px;padding:13px 15px;background:var(--surface);border:1px solid var(--line);border-radius:11px;font-size:12.5px;color:var(--muted)}
+.sr-note b{color:var(--text)}
+
+/* ============ TRADE-IN ============ */
+.trade{padding:90px 0}
+.t-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.t-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.t-steps{list-style:none;margin-top:26px;display:grid;gap:16px}
+.t-steps li{display:flex;gap:16px;align-items:flex-start}
+.t-num{width:34px;height:34px;border-radius:10px;background:var(--primary-soft);border:1px solid rgba(37,99,235,.4);color:var(--primary-h);font-family:var(--disp);font-weight:700;font-size:14px;display:grid;place-items:center;flex:none}
+.t-steps b{display:block;font-size:14.5px}
+.t-steps p{font-size:13px;color:var(--muted)}
+.chk-row{display:flex;flex-wrap:wrap;gap:9px}
+.chk{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--line2);border-radius:99px;padding:8px 15px;cursor:pointer;transition:.2s;user-select:none}
+.chk input{display:none}
+.chk .box{width:15px;height:15px;border-radius:5px;border:1.5px solid var(--line2);display:grid;place-items:center;transition:.2s}
+.chk .box .lucide{width:10px;height:10px;opacity:0;color:#fff}
+.chk:has(input:checked){border-color:var(--primary);background:var(--primary-soft);color:var(--text)}
+.chk:has(input:checked) .box{background:var(--primary);border-color:var(--primary)}
+.chk:has(input:checked) .box .lucide{opacity:1}
+
+/* ============ ULASAN ============ */
+.ulasan{padding:90px 0;background:var(--surface);border-block:1px solid var(--line)}
+.t-wrap{position:relative;max-width:760px;margin:0 auto}
+.t-track{position:relative;transition:height .35s ease}
+.t-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateY(10px);transition:.45s;text-align:center;padding:6px 8px}
+.t-slide.active{opacity:1;visibility:visible;transform:none;position:relative}
+.t-quote-ico{width:38px;height:38px;color:var(--primary);opacity:.85;margin:0 auto 18px}
+.t-stars{display:flex;justify-content:center;gap:3px;color:var(--warn);margin-bottom:18px}
+.t-stars .lucide{width:16px;height:16px;fill:currentColor}
+.t-slide blockquote{font-size:clamp(16.5px,2.2vw,20px);line-height:1.55;font-weight:500;letter-spacing:-.01em;margin-bottom:20px}
+.t-who{display:flex;align-items:center;justify-content:center;gap:12px}
+.t-ava{width:40px;height:40px;border-radius:50%;background:var(--primary-soft);border:1px solid rgba(37,99,235,.4);display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:14px;color:var(--primary-h)}
+.t-who b{display:block;font-size:14px;text-align:left}
+.t-who span{font-size:12px;color:var(--dim);display:block;text-align:left}
+.t-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px}
+.t-arrow{width:40px;height:40px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:.2s}
+.t-arrow:hover{border-color:var(--primary);color:var(--text);background:var(--primary-soft)}
+.t-dots{display:flex;gap:7px}
+.t-dot{width:7px;height:7px;border-radius:99px;background:var(--line2);transition:.3s;padding:0}
+.t-dot.active{width:22px;background:var(--primary)}
+.review-cta{margin-top:64px;text-align:center;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:44px 24px}
+.review-cta h3{font-size:clamp(20px,2.6vw,26px);margin-bottom:8px}
+.review-cta p{color:var(--muted);font-size:14px;max-width:420px;margin:0 auto}
+.rv-stars{display:flex;justify-content:center;gap:5px;color:var(--warn);margin:20px 0 24px}
+.rv-stars .lucide{width:24px;height:24px;fill:currentColor;opacity:0;transform:scale(.4);animation:starPop .4s forwards}
+.rv-stars .lucide:nth-child(2){animation-delay:.1s}.rv-stars .lucide:nth-child(3){animation-delay:.2s}.rv-stars .lucide:nth-child(4){animation-delay:.3s}.rv-stars .lucide:nth-child(5){animation-delay:.4s}
+@keyframes starPop{to{opacity:1;transform:scale(1)}}
+
+/* ============ LOKASI ============ */
+.lokasi{padding:90px 0}
+.l-grid{display:grid;gap:26px;align-items:stretch}
+@media(min-width:960px){.l-grid{grid-template-columns:1.25fr .75fr}}
+.map-box{border-radius:20px;overflow:hidden;border:1px solid var(--line);min-height:340px;position:relative;background:var(--surface)}
+.map-box iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.3) contrast(1.05)}
+.l-info{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 26px;display:flex;flex-direction:column}
+.l-addr{display:flex;gap:14px;margin:18px 0 22px}
+.l-addr .q-ico{flex:none}
+.l-addr b{display:block;font-family:var(--disp);font-size:15px;margin-bottom:3px}
+.l-addr p{font-size:13.5px;color:var(--muted)}
+.l-hours{border-top:1px solid var(--line);padding-top:18px;margin-bottom:24px;display:grid;gap:9px}
+.l-hours div{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.l-hours b{color:var(--text);font-weight:500}
+.l-hours .closed{color:var(--bad)}
+.l-btns{display:grid;gap:10px;margin-top:auto}
+
+/* ============ TENTANG ============ */
+.tentang{padding:90px 0;background:var(--surface);border-block:1px solid var(--line)}
+.a-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:960px){.a-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.a-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+.a-point{display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:500;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+.a-point .lucide{width:16px;height:16px;color:var(--primary-h)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:24px 20px}
+.stat b{display:block;font-family:var(--disp);font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-.02em;color:var(--text)}
+.stat span{font-size:12.5px;color:var(--dim)}
+
+/* ============ KONTAK ============ */
+.kontak{padding:90px 0}
+.k-card{text-align:center;border:1px solid var(--line);border-radius:24px;padding:56px 26px;background:var(--surface);position:relative;overflow:hidden}
+.k-card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(148,163,184,.06) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.k-card>*{position:relative}
+.k-card h2{font-size:clamp(24px,3.4vw,34px);margin:14px 0 10px}
+.k-card p{color:var(--muted);max-width:460px;margin:0 auto 28px}
+.k-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);background:#0A0F1C;padding:56px 0 0}
+.ft-grid{display:grid;gap:36px;padding-bottom:44px}
+@media(min-width:820px){.ft-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr}}
+.ft-col h4{font-family:var(--disp);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);margin-bottom:16px}
+.ft-col p{font-size:13px;color:var(--muted)}
+.ft-col ul{list-style:none;display:grid;gap:10px}
+.ft-col a{font-size:13.5px;color:var(--muted);transition:.2s}
+.ft-col a:hover{color:var(--primary-h)}
+.ft-addr{display:flex;gap:10px;font-size:13px;color:var(--muted);margin-top:6px}
+.ft-addr .lucide{width:15px;height:15px;color:var(--primary-h);margin-top:3px}
+.ft-bottom{border-top:1px solid var(--line);padding:20px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12.5px;color:var(--dim)}
+.ft-bottom b{color:var(--muted);font-weight:600}
+
+/* ============ FLOATING: FAB / TRAY / TOAST ============ */
+.fab{position:fixed;right:18px;bottom:18px;z-index:85;display:flex;align-items:center;gap:9px;background:var(--wa);color:#fff;padding:14px 18px;border-radius:99px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(22,163,74,.4);transition:.25s}
+.fab:hover{background:var(--wa-h);transform:translateY(-3px)}
+.fab .lucide{width:20px;height:20px}
+@media(max-width:640px){.fab span{display:none}.fab{padding:16px}}
+.cmp-tray{position:fixed;z-index:84;left:50%;transform:translate(-50%,140%);bottom:20px;background:var(--surface);border:1px solid var(--line2);border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;display:flex;align-items:center;gap:12px;transition:transform .4s cubic-bezier(.2,.8,.2,1);max-width:min(640px,calc(100% - 32px))}
+.cmp-tray.show{transform:translate(-50%,0)}
+@media(max-width:700px){.cmp-tray{left:14px;right:80px;transform:translateY(140%);max-width:none}.cmp-tray.show{transform:none}}
+.cmp-items{display:flex;gap:8px;flex-wrap:wrap}
+.cmp-item{display:flex;align-items:center;gap:7px;background:var(--field);border:1px solid var(--line);border-radius:9px;padding:6px 10px;font-size:12px;font-weight:600}
+.cmp-item button{color:var(--dim);display:grid;place-items:center}
+.cmp-item button:hover{color:var(--bad)}
+.cmp-item .lucide{width:12px;height:12px}
+.cmp-clear{font-size:12px;color:var(--dim);text-decoration:underline}
+.cmp-clear:hover{color:var(--text)}
+.toasts{position:fixed;top:84px;left:50%;transform:translateX(-50%);z-index:120;display:flex;flex-direction:column;gap:9px;align-items:center;pointer-events:none;width:max-content;max-width:calc(100% - 32px)}
+.toast{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line2);border-radius:12px;padding:11px 18px;font-size:13.5px;font-weight:500;box-shadow:var(--shadow);animation:toastIn .35s cubic-bezier(.2,.8,.2,1)}
+.toast .lucide{width:16px;height:16px}
+.toast.ok .lucide{color:var(--ok)}
+.toast.bad .lucide{color:var(--bad)}
+.toast.info .lucide{color:var(--primary-h)}
+.toast.out{animation:toastOut .3s forwards}
+@keyframes toastIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1}}
+@keyframes toastOut{to{opacity:0;transform:translateY(-10px)}}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:110;display:none;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}
+.m-overlay{position:absolute;inset:0;background:rgba(2,6,23,.72);backdrop-filter:blur(6px);animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+.m-panel{position:relative;background:var(--surface);border:1px solid var(--line2);border-radius:22px 22px 0 0;width:100%;max-height:92vh;overflow-y:auto;animation:sheetUp .4s cubic-bezier(.2,.8,.2,1)}
+@media(min-width:900px){.modal{align-items:center;padding:24px}.m-panel{border-radius:22px;max-width:940px;animation:pop .35s cubic-bezier(.2,.8,.2,1)}}
+@keyframes sheetUp{from{transform:translateY(60px);opacity:0}}
+@keyframes pop{from{transform:scale(.94);opacity:0}}
+.m-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(11,17,32,.7);border:1px solid var(--line2);display:grid;place-items:center;color:var(--muted);z-index:5;transition:.2s}
+.m-close:hover{color:var(--text);border-color:var(--primary)}
+.pm-grid{display:grid}
+@media(min-width:900px){.pm-grid{grid-template-columns:1fr 1fr}}
+.pm-art{position:relative;background:#0D1526;border-bottom:1px solid var(--line);display:grid;place-items:center;padding:44px 30px;min-height:280px}
+@media(min-width:900px){.pm-art{border-bottom:none;border-right:1px solid var(--line);position:sticky;top:0;align-self:start;min-height:100%}}
+.pm-info{padding:28px 24px 32px}
+@media(min-width:900px){.pm-info{padding:38px 34px}}
+.pm-tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:99px;display:inline-flex;align-items:center;gap:6px}
+.tag .lucide{width:11px;height:11px}
+.pm-info h2{font-size:clamp(22px,2.8vw,29px);margin-bottom:6px}
+.pm-desc{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+.pm-price{font-family:var(--disp);font-size:clamp(26px,3vw,32px);font-weight:700;letter-spacing:-.02em}
+.pm-cond{margin:16px 0 20px;padding:14px 16px;background:var(--bg);border:1px solid var(--line);border-radius:12px}
+.pm-sec{margin:22px 0}
+.pm-sec h4{font-family:var(--disp);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.spec-table{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.spec-row{display:grid;grid-template-columns:110px 1fr;font-size:13.5px;border-bottom:1px solid var(--line)}
+.spec-row:last-child{border-bottom:none}
+.spec-row dt{background:var(--bg);padding:10px 14px;color:var(--dim);font-size:12px;font-weight:600;letter-spacing:.04em}
+.spec-row dd{padding:10px 14px;color:var(--text);font-weight:500}
+.pm-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;list-style:none}
+@media(min-width:560px){.pm-checks{grid-template-columns:repeat(3,1fr)}}
+.pm-checks li{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 11px}
+.pm-checks .lucide{width:13px;height:13px;color:var(--ok)}
+.pm-btns{display:grid;gap:10px;margin-top:24px}
+.pm-guarantee{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:12.5px;color:var(--muted)}
+.pm-guarantee .lucide{width:15px;height:15px;color:var(--ok)}
+/* Compare */
+.cm-panel{max-width:760px}
+.cm-head{padding:26px 26px 0}
+.cm-head h2{font-size:22px}
+.cm-head p{font-size:13px;color:var(--muted);margin-top:4px}
+.cm-scroll{overflow-x:auto;padding:22px 26px 30px}
+.cmp-table{width:100%;border-collapse:collapse;min-width:520px}
+.cmp-table th,.cmp-table td{border:1px solid var(--line);padding:11px 13px;font-size:13px;text-align:left;vertical-align:top}
+.cmp-table th{background:var(--bg);font-family:var(--disp);font-size:13.5px;width:150px;color:var(--dim);font-weight:600;position:sticky;left:0}
+.cmp-table thead th{position:static;color:var(--text);font-size:14px}
+.cmp-table td .lucide{width:14px;height:14px;vertical-align:-2px;margin-right:5px}
+.best-ok{color:var(--ok);font-weight:600}
+.best-top{color:var(--primary-h);font-weight:600}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav-in">
+    <a href="#beranda" class="logo">
+      <span class="logo-mark"><i data-lucide="monitor"></i></span>
+      LIWA<span>NET</span>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" data-spy="beranda" href="#beranda">Beranda</a>
+      <a class="nav-link" data-spy="laptop" href="#laptop">Laptop</a>
+      <a class="nav-link" data-spy="service" href="#service">Service</a>
+      <a class="nav-link" data-spy="tentang" href="#tentang">Tentang</a>
+      <a class="nav-link" data-spy="lokasi" href="#lokasi">Lokasi</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" id="navWa" href="#" target="_blank" rel="noopener">
+      <i data-lucide="message-circle"></i> Hubungi Kami
+    </a>
+    <button class="burger" id="burger" aria-label="Buka menu"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+<div class="m-menu" id="mMenu">
+  <a href="#beranda">Beranda</a>
+  <a href="#laptop">Laptop</a>
+  <a href="#service">Service</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#lokasi">Lokasi</a>
+  <a href="#" target="_blank" rel="noopener" class="navWa2" style="color:var(--primary-h);font-weight:600">Hubungi Kami →</a>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Sebarus · Balik Bukit · Lampung Barat</span>
+      <h1>Temukan Laptop &amp; <span class="hl">Solusi IT</span> untuk Kebutuhanmu</h1>
+      <p class="hero-sub">Jual beli laptop baru dan second, service laptop &amp; printer, serta berbagai kebutuhan komputer — semua ada di Liwa Net.</p>
+      <div class="hero-cta">
+        <a href="#laptop" class="btn btn-primary"><i data-lucide="laptop"></i> Lihat Laptop</a>
+        <a href="#service" class="btn btn-ghost"><i data-lucide="wrench"></i> Service Sekarang</a>
+      </div>
+      <div class="hero-proof">
+        <span class="stars" id="heroStars"></span>
+        <span><b style="color:var(--text)">4.9/5</b> dari pelanggan di Google Maps</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-laptop">
+        <div class="hl-lid">
+          <div class="hl-screen">
+            <i class="hl-camera"></i>
+            <div class="hl-boot">
+              <div class="hl-logo" id="hlLogo">LIWA<span>NET</span></div>
+              <div class="hl-bar" id="hlBar"><i></i></div>
+              <div class="hl-msg" id="hlMsg">Menyalakan sistem…</div>
+            </div>
+          </div>
+        </div>
+        <div class="hl-base"></div>
+      </div>
+      <div class="chips">
+        <a class="chip c1" href="#laptop" data-goto-cat="baru"><i data-lucide="check" class="ok"></i> Laptop Baru</a>
+        <a class="chip c2" href="#laptop" data-goto-cat="second"><i data-lucide="recycle"></i> Laptop Second</a>
+        <a class="chip c3" href="#service"><i data-lucide="wrench"></i> Service Laptop</a>
+        <a class="chip c4" href="#service"><i data-lucide="printer"></i> Service Printer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee brand -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-track" id="marqTrack"></div>
+</div>
+
+<!-- ============ QUICK SERVICE ============ -->
+<section class="quick">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow">Layanan Utama</span>
+      <h2>Apa yang Kamu Butuhkan?</h2>
+      <p>Empat layanan inti Liwa Net — klik untuk langsung menuju bagian yang kamu cari.</p>
+    </div>
+    <div class="q-grid">
+      <button class="q-card rv" data-goto-cat="baru">
+        <span class="q-ico"><i data-lucide="laptop"></i></span>
+        <h3>Laptop Baru</h3>
+        <p>Laptop resmi bergaransi untuk kerja, kuliah, dan gaming.</p>
+        <span class="q-go">Lihat katalog <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="q-card rv" data-goto-cat="second" style="transition-delay:.08s">
+        <span class="q-ico"><i data-lucide="recycle"></i></span>
+        <h3>Laptop Second</h3>
+        <p>Unit bekas terkurasi, sudah melewati 10 titik pengecekan.</p>
+        <span class="q-go">Lihat katalog <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="q-card rv" data-goto-service="Laptop" style="transition-delay:.16s">
+        <span class="q-ico"><i data-lucide="wrench"></i></span>
+        <h3>Service Laptop</h3>
+        <p>Install ulang, upgrade, ganti part, sampai mati total.</p>
+        <span class="q-go">Booking service <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="q-card rv" data-goto-service="Printer" style="transition-delay:.24s">
+        <span class="q-ico"><i data-lucide="printer"></i></span>
+        <h3>Service Printer</h3>
+        <p>Head tersumbat, tinta macet, hasil print bergaris — beres.</p>
+        <span class="q-go">Booking service <i data-lucide="arrow-right"></i></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KATALOG ============ -->
+<section class="katalog" id="laptop">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow">Katalog</span>
+      <h2>Laptop Pilihan di Liwa Net</h2>
+      <p>Temukan laptop sesuai kebutuhan dan budget kamu. Semua unit bisa dicek &amp; dites langsung di toko.</p>
+    </div>
+    <div class="f-row rv">
+      <div class="f-chips" id="catChips">
+        <span class="f-lbl">Kategori</span>
+        <button class="fchip active" data-cat="semua">Semua</button>
+        <button class="fchip" data-cat="baru">Baru</button>
+        <button class="fchip" data-cat="second">Second</button>
+        <button class="fchip" data-cat="gaming">Gaming</button>
+        <button class="fchip" data-cat="office">Office</button>
+        <button class="fchip" data-cat="pelajar">Pelajar</button>
+      </div>
+      <div class="searchbar">
+        <i data-lucide="search"></i>
+        <input type="text" id="searchInput" placeholder="Cari laptop… mis. ThinkPad" autocomplete="off">
+      </div>
+    </div>
+    <div class="f-chips rv" id="budgetChips" style="margin-bottom:6px">
+      <span class="f-lbl">Budget</span>
+      <button class="fchip active" data-min="0" data-max="Infinity">Semua Harga</button>
+      <button class="fchip" data-min="0" data-max="3000000">&lt; 3 jt</button>
+      <button class="fchip" data-min="3000000" data-max="5000000">3 – 5 jt</button>
+      <button class="fchip" data-min="5000000" data-max="8000000">5 – 8 jt</button>
+      <button class="fchip" data-min="8000000" data-max="12000000">8 – 12 jt</button>
+      <button class="fchip" data-min="12000000" data-max="Infinity">&gt; 12 jt</button>
+    </div>
+    <div class="result-meta" id="resultMeta"></div>
+    <div class="p-grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ============ SECOND ============ -->
+<section class="second" id="second">
+  <div class="container s-grid">
+    <div class="rv">
+      <span class="eyebrow">Laptop Second</span>
+      <h2 style="font-size:clamp(26px,3.6vw,38px);margin:12px 0 10px">Laptop Second Pilihan</h2>
+      <p style="color:var(--muted)">Laptop bekas yang telah melalui pengecekan menyeluruh sebelum ditawarkan kepada pelanggan. Bukan sekadar "laptop bekas" — setiap unit kami kurasi.</p>
+      <div class="check-grid" id="checkGrid"></div>
+      <button class="btn btn-primary" data-goto-cat="second"><i data-lucide="recycle"></i> Lihat Semua Laptop Second</button>
+    </div>
+    <div class="rv" style="transition-delay:.1s">
+      <div class="feat-card" id="featCard"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE CENTER ============ -->
+<section class="service" id="service">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow">Service Center</span>
+      <h2>Laptop atau Printer Bermasalah?<br>Kami Siap Membantu.</h2>
+      <p>Diagnosa gratis, pengerjaan transparan — kamu tahu biayanya sebelum dikerjakan.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-col rv">
+        <div class="svc-col-head">
+          <span class="q-ico"><i data-lucide="wrench"></i></span>
+          <div><h3>Service Laptop</h3><p>Semua merk, software &amp; hardware</p></div>
+        </div>
+        <ul class="svc-items">
+          <li><i data-lucide="download"></i> Install Ulang</li>
+          <li><i data-lucide="hard-drive"></i> Upgrade SSD</li>
+          <li><i data-lucide="memory-stick"></i> Upgrade RAM</li>
+          <li><i data-lucide="brush"></i> Cleaning</li>
+          <li><i data-lucide="thermometer"></i> Overheat</li>
+          <li><i data-lucide="battery-charging"></i> Ganti Baterai</li>
+          <li><i data-lucide="monitor"></i> Ganti LCD</li>
+          <li><i data-lucide="keyboard"></i> Ganti Keyboard</li>
+          <li><i data-lucide="zap-off"></i> Masalah Mati Total</li>
+          <li><i data-lucide="search"></i> Troubleshooting</li>
+        </ul>
+      </div>
+      <div class="svc-col rv" style="transition-delay:.1s">
+        <div class="svc-col-head">
+          <span class="q-ico"><i data-lucide="printer"></i></span>
+          <div><h3>Service Printer</h3><p>Inkjet, tanki, &amp; laser semua merk</p></div>
+        </div>
+        <ul class="svc-items">
+          <li><i data-lucide="printer"></i> Tidak Bisa Print</li>
+          <li><i data-lucide="droplets"></i> Cleaning Printer</li>
+          <li><i data-lucide="pen-tool"></i> Masalah Tinta</li>
+          <li><i data-lucide="align-justify"></i> Hasil Print Bergaris</li>
+          <li><i data-lucide="settings"></i> Maintenance</li>
+          <li><i data-lucide="hammer"></i> Perbaikan Hardware</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-perks">
+      <div class="perk rv"><i data-lucide="shield-check"></i> Garansi servis 30 hari</div>
+      <div class="perk rv" style="transition-delay:.06s"><i data-lucide="zap"></i> Pengerjaan 1–3 hari</div>
+      <div class="perk rv" style="transition-delay:.12s"><i data-lucide="badge-check"></i> Sparepart bergaransi</div>
+      <div class="perk rv" style="transition-delay:.18s"><i data-lucide="truck"></i> Antar-jemput area Liwa</div>
+    </div>
+
+    <!-- Booking + Cek Status -->
+    <div class="bk-grid">
+      <div class="panel rv">
+        <div class="panel-head">
+          <h3>Booking Service</h3>
+          <p>Isi form di bawah, permintaanmu langsung terkirim ke WhatsApp kami.</p>
+        </div>
+        <form class="f-grid" id="bookingForm" novalidate>
+          <div class="field">
+            <label for="bkNama">Nama <b>*</b></label>
+            <input type="text" id="bkNama" placeholder="Nama kamu">
+            <span class="err-msg">Nama wajib diisi.</span>
+          </div>
+          <div class="field">
+            <label for="bkWa">Nomor WhatsApp <b>*</b></label>
+            <input type="tel" id="bkWa" placeholder="08xx-xxxx-xxxx">
+            <span class="err-msg">Masukkan nomor WA yang valid.</span>
+          </div>
+          <div class="field">
+            <label for="bkJenis">Jenis Perangkat</label>
+            <select id="bkJenis"><option>Laptop</option><option>Printer</option></select>
+          </div>
+          <div class="field">
+            <label for="bkMerk">Merk</label>
+            <input type="text" id="bkMerk" placeholder="Contoh: ASUS">
+          </div>
+          <div class="field f-full">
+            <label for="bkModel">Model</label>
+            <input type="text" id="bkModel" placeholder="Contoh: VivoBook 14">
+          </div>
+          <div class="field f-full">
+            <label for="bkKeluhan">Keluhan <b>*</b></label>
+            <textarea id="bkKeluhan" placeholder="Ceritakan masalah perangkatmu… mis. laptop cepat panas dan mati sendiri."></textarea>
+            <span class="err-msg">Ceritakan keluhanmu (min. 10 karakter).</span>
+          </div>
+          <div class="f-full" style="display:grid;gap:12px">
+            <button type="submit" class="btn btn-primary"><i data-lucide="send"></i> Kirim Permintaan Service</button>
+            <span class="form-note"><i data-lucide="info"></i> Kamu akan diarahkan ke WhatsApp dengan pesan yang sudah terisi otomatis.</span>
+          </div>
+        </form>
+        <div class="bk-success" id="bkSuccess"></div>
+      </div>
+
+      <div class="panel rv" style="transition-delay:.1s">
+        <div class="panel-head">
+          <h3>Cek Status Service</h3>
+          <p>Sudah menitipkan perangkat? Lacak progresnya dengan nomor servis.</p>
+        </div>
+        <div class="status-input">
+          <input type="text" id="statusInput" placeholder="LWN-26001" maxlength="10">
+          <button class="btn btn-primary" id="statusBtn"><i data-lucide="search"></i> Cek</button>
+        </div>
+        <p class="status-hint">Contoh nomor demo: <b data-demo="LWN-26001">LWN-26001</b> · <b data-demo="LWN-26002">LWN-26002</b> · <b data-demo="LWN-26003">LWN-26003</b></p>
+        <div class="status-notfound" id="statusNotFound">
+          Nomor servis tidak ditemukan. Pastikan penulisannya sesuai dengan struk yang kamu terima di toko.
+        </div>
+        <div class="status-result" id="statusResult"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRADE-IN ============ -->
+<section class="trade" id="jual">
+  <div class="container t-grid">
+    <div class="rv">
+      <span class="eyebrow">Jual Beli</span>
+      <h2 style="font-size:clamp(26px,3.6vw,38px);margin:12px 0 10px">Punya Laptop Bekas?</h2>
+      <p style="color:var(--muted)">Ingin menjual atau upgrade laptop kamu? Kami beli dengan harga wajar — proses transparan, bayar tunai di tempat.</p>
+      <ul class="t-steps">
+        <li><span class="t-num">1</span><div><b>Kirim spesifikasi</b><p>Isi form di samping, kami balas lewat WhatsApp.</p></div></li>
+        <li><span class="t-num">2</span><div><b>Cek &amp; appraise</b><p>Bawa unit ke toko, kami cek kondisi di depan kamu.</p></div></li>
+        <li><span class="t-num">3</span><div><b>Deal &amp; bayar</b><p>Setuju dengan harga? Bayar tunai langsung di tempat.</p></div></li>
+      </ul>
+    </div>
+    <div class="panel rv" style="transition-delay:.1s">
+      <div class="panel-head">
+        <h3>Kirim Detail Laptopmu</h3>
+        <p>Semakin lengkap info, semakin akurat tawaran harganya.</p>
+      </div>
+      <form class="f-grid" id="tradeForm" novalidate>
+        <div class="field f-full">
+          <label for="trModel">Merk / Model <b>*</b></label>
+          <input type="text" id="trModel" placeholder="Contoh: Lenovo ThinkPad T480">
+          <span class="err-msg">Merk / model wajib diisi.</span>
+        </div>
+        <div class="field">
+          <label for="trKondisi">Kondisi</label>
+          <select id="trKondisi">
+            <option>Like New (95–100%)</option>
+            <option selected>Sangat Baik (85–95%)</option>
+            <option>Baik (75–85%)</option>
+            <option>Perlu Perbaikan</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="trRam">RAM</label>
+          <select id="trRam"><option>4 GB</option><option selected>8 GB</option><option>16 GB</option><option>32 GB</option></select>
+        </div>
+        <div class="field">
+          <label for="trStorage">Storage</label>
+          <select id="trStorage"><option>HDD 500 GB</option><option>SSD 128 GB</option><option selected>SSD 256 GB</option><option>SSD 512 GB</option><option>SSD 1 TB</option></select>
+        </div>
+        <div class="field f-full">
+          <label>Kelengkapan</label>
+          <div class="chk-row">
+            <label class="chk"><input type="checkbox" value="Charger" checked><span class="box"><i data-lucide="check"></i></span>Charger</label>
+            <label class="chk"><input type="checkbox" value="Tas"><span class="box"><i data-lucide="check"></i></span>Tas</label>
+            <label class="chk"><input type="checkbox" value="Box / Dus"><span class="box"><i data-lucide="check"></i></span>Box / Dus</label>
+          </div>
+        </div>
+        <div class="field f-full">
+          <label for="trWa">Nomor WhatsApp <b>*</b></label>
+          <input type="tel" id="trWa" placeholder="08xx-xxxx-xxxx">
+          <span class="err-msg">Masukkan nomor WA yang valid.</span>
+        </div>
+        <div class="field f-full">
+          <label for="trNote">Catatan tambahan (opsional)</label>
+          <input type="text" id="trNote" placeholder="Mis. ada minus di sudut layar">
+        </div>
+        <div class="f-full">
+          <button type="submit" class="btn btn-primary" style="width:100%"><i data-lucide="send"></i> Kirim ke Liwa Net</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ULASAN ============ -->
+<section class="ulasan" id="ulasan">
+  <div class="container">
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow" style="justify-content:center">Testimoni</span>
+      <h2>Apa Kata Pelanggan?</h2>
+      <p style="margin-inline:auto">Cerita nyata dari mereka yang sudah belanja dan servis di Liwa Net.</p>
+    </div>
+    <div class="t-wrap rv">
+      <div class="t-track" id="tTrack"></div>
+      <div class="t-nav">
+        <button class="t-arrow" id="tPrev" aria-label="Ulasan sebelumnya"><i data-lucide="chevron-left"></i></button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-arrow" id="tNext" aria-label="Ulasan berikutnya"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </div>
+    <div class="review-cta rv">
+      <span class="eyebrow" style="justify-content:center">Google Review</span>
+      <h3 style="margin-top:12px">Puas dengan Layanan Liwa Net?</h3>
+      <p>Bantu kami tumbuh dengan memberikan ulasan di Google Maps. Ulasanmu sangat berarti.</p>
+      <div class="rv-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener" id="btnReview"><i data-lucide="star"></i> Berikan Ulasan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOKASI ============ -->
+<section class="lokasi" id="lokasi">
+  <div class="container">
+    <div class="sec-head rv">
+      <span class="eyebrow">Lokasi</span>
+      <h2>Kunjungi Toko Kami</h2>
+      <p>Mampir langsung untuk lihat unit, tes dulu sebelum beli, atau konsultasi gratis.</p>
+    </div>
+    <div class="l-grid">
+      <div class="map-box rv">
+        <iframe src="https://www.google.com/maps?q=Sebarus,+Balik+Bukit,+Kabupaten+Lampung+Barat,+Lampung&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi Liwa Net" allowfullscreen></iframe>
+      </div>
+      <div class="l-info rv" style="transition-delay:.1s">
+        <span class="eyebrow">Alamat</span>
+        <div class="l-addr">
+          <span class="q-ico"><i data-lucide="map-pin"></i></span>
+          <div>
+            <b>Liwa Net</b>
+            <p>Sebarus, Kecamatan Balik Bukit<br>Kabupaten Lampung Barat, Lampung, Indonesia</p>
+          </div>
+        </div>
+        <div class="l-hours">
+          <div><span>Senin – Jumat</span><b>09.00 – 17.00 WIB</b></div>
+          <div><span>Sabtu</span><b>09.00 – 15.00 WIB</b></div>
+          <div><span>Minggu</span><b class="closed">Tutup</b></div>
+        </div>
+        <div class="l-btns">
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener" id="btnMaps1"><i data-lucide="map-pin"></i> Buka di Google Maps</a>
+          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener" id="btnReview2"><i data-lucide="star"></i> Berikan Ulasan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TENTANG ============ -->
+<section class="tentang" id="tentang">
+  <div class="container a-grid">
+    <div class="rv">
+      <span class="eyebrow">Tentang Kami</span>
+      <h2 style="font-size:clamp(26px,3.6vw,38px);margin:12px 0 14px">Tentang Liwa Net</h2>
+      <p style="color:var(--muted)">Liwa Net hadir sebagai tempat untuk memenuhi kebutuhan komputer dan teknologi di Lampung Barat — mulai dari jual beli laptop baru dan second hingga layanan service laptop dan printer, lengkap dengan purna jual yang benar-benar kami tanggung jawabkan.</p>
+      <div class="a-points">
+        <div class="a-point"><i data-lucide="laptop"></i> Laptop Baru &amp; Second</div>
+        <div class="a-point"><i data-lucide="wrench"></i> Service Laptop</div>
+        <div class="a-point"><i data-lucide="printer"></i> Service Printer</div>
+        <div class="a-point"><i data-lucide="hard-drive"></i> Komputer &amp; Aksesoris</div>
+      </div>
+    </div>
+    <div class="stats rv" style="transition-delay:.1s">
+      <div class="stat"><b data-count="5" data-suffix="+">0</b><span>Tahun melayani</span></div>
+      <div class="stat"><b data-count="350" data-suffix="+">0</b><span>Laptop terjual</span></div>
+      <div class="stat"><b data-count="900" data-suffix="+">0</b><span>Perangkat diservis</span></div>
+      <div class="stat"><b data-count="4.9" data-dec="1">0</b><span>Rating Google</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAK ============ -->
+<section class="kontak" id="kontak">
+  <div class="container">
+    <div class="k-card rv">
+      <span class="eyebrow" style="justify-content:center">Konsultasi Gratis</span>
+      <h2>Butuh Bantuan?</h2>
+      <p>Konsultasikan kebutuhan laptop atau masalah perangkatmu kepada Liwa Net — gratis, tanpa dipaksa beli.</p>
+      <div class="k-btns">
+        <a class="btn btn-wa" href="#" target="_blank" rel="noopener" id="btnWa1"><i data-lucide="message-circle"></i> WhatsApp</a>
+        <a class="btn btn-ghost" href="#lokasi"><i data-lucide="map-pin"></i> Lokasi</a>
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener" id="btnReview3"><i data-lucide="star"></i> Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-col">
+        <a href="#beranda" class="logo" style="margin-bottom:14px">
+          <span class="logo-mark"><i data-lucide="monitor"></i></span>
+          LIWA<span>NET</span>
+        </a>
+        <p>Solusi Komputer &amp; Teknologi<br>di Lampung Barat.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#laptop">Laptop</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#lokasi">Lokasi</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="#laptop" data-goto-cat="baru">Laptop Baru</a></li>
+          <li><a href="#laptop" data-goto-cat="second">Laptop Second</a></li>
+          <li><a href="#service">Service Laptop</a></li>
+          <li><a href="#service">Service Printer</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Lokasi</h4>
+        <div class="ft-addr">
+          <i data-lucide="map-pin"></i>
+          <span>Sebarus, Balik Bukit<br>Kabupaten Lampung Barat<br>Lampung, Indonesia</span>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 <b>Liwa Net</b> — All Rights Reserved.</span>
+      <span>Sebarus · Balik Bukit · Lampung Barat</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" href="#" target="_blank" rel="noopener" id="fabWa" aria-label="Chat WhatsApp">
+  <i data-lucide="message-circle"></i><span>WhatsApp</span>
+</a>
+
+<!-- Compare tray -->
+<div class="cmp-tray" id="cmpTray">
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="cmp-clear" id="cmpClear">Kosongkan</button>
+  <button class="btn btn-primary btn-sm" id="cmpGo">Bandingkan</button>
+</div>
+
+<!-- Toasts -->
+<div class="toasts" id="toasts"></div>
+
+<!-- Modal Detail Produk -->
+<div class="modal" id="pm" role="dialog" aria-modal="true">
+  <div class="m-overlay" data-close></div>
+  <div class="m-panel" id="pmPanel"></div>
+</div>
+
+<!-- Modal Compare -->
+<div class="modal" id="cm" role="dialog" aria-modal="true">
+  <div class="m-overlay" data-close></div>
+  <div class="m-panel cm-panel">
+    <button class="m-close" data-close aria-label="Tutup"><i data-lucide="x"></i></button>
+    <div class="cm-head">
+      <h2>Perbandingan Laptop</h2>
+      <p>Bandingkan spesifikasi samping-ke-samping. Harga terendah &amp; spesifikasi terbesar ditandai.</p>
+    </div>
+    <div class="cm-scroll" id="cmBody"></div>
+  </div>
+</div>
+
+<script>
+/* ================================================================
+   KONFIGURASI — ganti bagian ini dengan data asli Liwa Net
+================================================================ */
+const WA_NUMBER  = '6281234567890'; // ← GANTI: nomor WhatsApp toko (format 62xxx)
+const GMAPS_URL  = 'https://www.google.com/maps/search/?api=1&query=Liwa+Net+Sebarus+Balik+Bukit+Lampung+Barat'; // ← GANTI: link lokasi toko
+const REVIEW_URL = GMAPS_URL; // ← GANTI: link review (Google Maps → bagikan → link tempat, atau writereview?placeid=...)
+
+/* ============ UTIL ============ */
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const fmtRp = n => 'Rp ' + n.toLocaleString('id-ID');
+const waLink = t => 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(t);
+function icons(){ try{ lucide.createIcons({attrs:{'stroke-width':1.8}}); }catch(e){} }
+function toast(msg, type='ok'){
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  const ic = type === 'ok' ? 'check' : type === 'bad' ? 'x' : 'info';
+  t.innerHTML = '<i data-lucide="' + ic + '"></i><span>' + msg + '</span>';
+  $('#toasts').appendChild(t); icons();
+  setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 320); }, 3000);
+}
+function lockBody(v){ document.body.style.overflow = v ? 'hidden' : ''; }
+
+/* ============ DATA PRODUK ============ */
+const CHECKS = ['Keyboard','Touchpad','Display','USB Port','Wi-Fi','Bluetooth','Speaker','Kamera','Battery','Storage'];
+const PRODUCTS = [
+  {id:1, brand:'ASUS', name:'ASUS VivoBook 14', tags:['baru','office'], status:'ready',
+   cpu:'Intel Core i5-1235U', gpu:'Intel Iris Xe', ram:'8 GB', storage:'SSD 512 GB', display:'14" FHD', os:'Windows 11',
+   price:6499000, tint:'#7EA6F4', desc:'Tipis, ringan, dan pas untuk kerja harian maupun kuliah. Sudah include Windows asli.'},
+  {id:2, brand:'Lenovo', name:'Lenovo IdeaPad Slim 3', tags:['baru','office','pelajar'], status:'ready',
+   cpu:'AMD Ryzen 5 7520U', gpu:'AMD Radeon 610M', ram:'8 GB', storage:'SSD 512 GB', display:'15.6" FHD', os:'Windows 11',
+   price:6799000, tint:'#8FD3C7', desc:'Layar besar untuk multitasking sehari-hari dengan baterai yang tahan lama.'},
+  {id:3, brand:'ASUS', name:'ASUS Vivobook Go 14', tags:['baru','pelajar'], status:'ready',
+   cpu:'Intel N100', gpu:'Intel UHD', ram:'8 GB', storage:'SSD 256 GB', display:'14" FHD', os:'Windows 11',
+   price:4299000, tint:'#C4B5FD', desc:'Pilihan paling hemat untuk pelajar — ringan di tangan dan di kantong.'},
+  {id:4, brand:'HP', name:'HP 14s', tags:['baru','pelajar','office'], status:'limited',
+   cpu:'Intel Core i3-1215U', gpu:'Intel UHD', ram:'8 GB', storage:'SSD 256 GB', display:'14" FHD', os:'Windows 11',
+   price:5999000, tint:'#94A3B8', desc:'Bodi ramping dengan performa Core i3 generasi ke-12 yang responsif.'},
+  {id:5, brand:'ASUS', name:'ASUS TUF Gaming F15', tags:['baru','gaming'], status:'ready',
+   cpu:'Intel Core i5-11400H', gpu:'RTX 3050 4GB', ram:'16 GB', storage:'SSD 512 GB', display:'15.6" 144Hz', os:'Windows 11',
+   price:10999000, tint:'#F0A35E', desc:'Sertifikasi MIL-STD, siap untuk gaming berat maupun rendering.'},
+  {id:6, brand:'Acer', name:'Acer Nitro V15', tags:['baru','gaming'], status:'limited',
+   cpu:'Intel Core i5-13420H', gpu:'RTX 4050 6GB', ram:'16 GB', storage:'SSD 512 GB', display:'15.6" 144Hz', os:'Windows 11',
+   price:12499000, tint:'#7EA6F4', desc:'RTX 4050 untuk game AAA dan kerja 3D — stok terakhir.'},
+  {id:7, brand:'Lenovo', name:'Lenovo LOQ 15', tags:['baru','gaming'], status:'ready',
+   cpu:'Intel Core i5-12450HX', gpu:'RTX 3050 6GB', ram:'16 GB', storage:'SSD 512 GB', display:'15.6" 144Hz', os:'Windows 11',
+   price:11499000, tint:'#8FD3C7', desc:'Sistem pendingin besar, nyaman untuk sesi gaming berdurasi lama.'},
+  {id:8, brand:'ASUS', name:'ASUS Zenbook 14 OLED', tags:['baru','office'], status:'sold',
+   cpu:'Intel Core Ultra 5', gpu:'Intel Arc', ram:'16 GB', storage:'SSD 512 GB', display:'14" 2.8K OLED', os:'Windows 11',
+   price:9999000, tint:'#C4B5FD', desc:'Layar OLED 2.8K yang premium, super tipis untuk mobilitas tinggi.'},
+  {id:9, brand:'Lenovo', name:'Lenovo ThinkPad T480', tags:['second','office'], status:'ready',
+   cpu:'Intel Core i5-8250U', gpu:'Intel UHD 620', ram:'8 GB', storage:'SSD 256 GB', display:'14" FHD', os:'Windows 11 Pro',
+   price:4250000, cond:90, condLabel:'Sangat Baik', tint:'#7EA6F4',
+   desc:'Legenda laptop bisnis. Bodi kokoh, keyboard terbaik di kelasnya, dan sangat mudah di-upgrade.'},
+  {id:10, brand:'Dell', name:'Dell Latitude 7490', tags:['second','office'], status:'ready',
+   cpu:'Intel Core i7-8650U', gpu:'Intel UHD 620', ram:'16 GB', storage:'SSD 512 GB', display:'14" FHD', os:'Windows 11 Pro',
+   price:5150000, cond:95, condLabel:'Like New', tint:'#8FD3C7',
+   desc:'Kelas bisnis bekas berspesifikasi tinggi — untuk kerja berat dengan budget terjangkau.'},
+  {id:11, brand:'ASUS', name:'ASUS ROG Strix G531GT', tags:['second','gaming'], status:'ready',
+   cpu:'Intel Core i5-9300H', gpu:'GTX 1650 4GB', ram:'16 GB', storage:'SSD 512 GB', display:'15.6" 120Hz', os:'Windows 11',
+   price:6750000, cond:85, condLabel:'Baik', tint:'#F0A35E',
+   desc:'Gaming second terbaik di kelasnya — sudah SSD, siap main tanpa upgrade lagi.'},
+  {id:12, brand:'HP', name:'HP EliteBook 840 G5', tags:['second','office'], status:'limited',
+   cpu:'Intel Core i5-8350U', gpu:'Intel UHD 620', ram:'8 GB', storage:'SSD 256 GB', display:'14" FHD', os:'Windows 11 Pro',
+   price:3950000, cond:90, condLabel:'Sangat Baik', tint:'#94A3B8',
+   desc:'Tipis, ringan, dan profesional. Unit ex-corporate yang terawati.'},
+  {id:13, brand:'Apple', name:'MacBook Air 2017', tags:['second'], status:'sold',
+   cpu:'Intel Core i5-5350U', gpu:'Intel HD 6000', ram:'8 GB', storage:'SSD 128 GB', display:'13.3"', os:'macOS',
+   price:5900000, cond:88, condLabel:'Sangat Baik', tint:'#C4B5FD',
+   desc:'Klasik yang tetap andal untuk browsing, editing dokumen, dan multimedia.'}
+];
+const STATUS_META = {
+  ready:   {label:'Ready',        cls:'st-ready'},
+  limited: {label:'Stok Terbatas',cls:'st-limited'},
+  sold:    {label:'Sold Out',     cls:'st-sold'}
+};
+
+/* ============ ILUSTRASI LAPTOP (SVG) ============ */
+function laptopArt(p){
+  let keys = '';
+  for(let r = 0; r < 3; r++)
+    for(let c = 0; c < 12; c++)
+      keys += '<rect x="' + (64 + c*16.5) + '" y="' + (154 + r*6) + '" width="13" height="4" rx="1.2" fill="#28344E"/>';
+  const short = p.cpu.replace('Intel ','').replace('AMD ','').slice(0, 18);
+  return '<svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + p.name + '">' +
+    '<rect x="60" y="16" width="200" height="130" rx="10" fill="#1B2537" stroke="#2C3A52"/>' +
+    '<rect x="68" y="24" width="184" height="114" rx="5" fill="#0A1424"/>' +
+    '<path d="M84 138 L170 24 M130 138 L216 24" stroke="rgba(148,163,184,.06)" stroke-width="26"/>' +
+    '<circle cx="160" cy="20.5" r="1.6" fill="#334155"/>' +
+    '<text x="160" y="82" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="25" font-weight="700" fill="' + p.tint + '" opacity=".92">' + p.brand.toUpperCase() + '</text>' +
+    '<text x="160" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#5B6B84">' + short.toUpperCase() + '</text>' +
+    '<path d="M44 148 L276 148 L296 172 Q299 177 292 177 L28 177 Q21 177 24 172 Z" fill="#202B40" stroke="#2C3A52"/>' +
+    keys +
+    '<rect x="140" y="171.5" width="40" height="3.5" rx="1.5" fill="#2A3752"/>' +
+  '</svg>';
+}
+
+/* ============ KATALOG: FILTER + SEARCH + RENDER ============ */
+const state = { cat:'semua', min:0, max:Infinity, q:'' };
+const grid = $('#grid');
+
+function filtered(){
+  return PRODUCTS.filter(p => {
+    if(state.cat !== 'semua' && !p.tags.includes(state.cat)) return false;
+    if(p.price < state.min || p.price > state.max) return false;
+    if(state.q){
+      const hay = (p.name + ' ' + p.brand + ' ' + p.cpu + ' ' + p.gpu).toLowerCase();
+      if(!hay.includes(state.q)) return false;
+    }
+    return true;
+  });
+}
+
+function statusBadge(p){
+  const m = STATUS_META[p.status];
+  return '<span class="badge b-status ' + m.cls + '">' + m.label + '</span>';
+}
+
+function renderGrid(){
+  const list = filtered();
+  $('#resultMeta').innerHTML = 'Menampilkan <b>' + list.length + '</b> dari ' + PRODUCTS.length + ' unit laptop';
+  if(!list.length){
+    grid.innerHTML = '<div class="empty"><i data-lucide="search-x"></i>' +
+      '<h3>Tidak ada laptop yang cocok</h3><p>Coba ubah kata kunci atau filter-nya.</p></div>';
+    icons(); return;
+  }
+  grid.innerHTML = list.map((p, i) => {
+    const cond = p.cond ? '<div class="cond"><div class="cond-top"><span>Kondisi</span><b>' + p.cond + '% · ' + p.condLabel + '</b></div><div class="cond-bar"><i style="width:' + p.cond + '%"></i></div></div>' : '';
+    const tag = p.tags.includes('second') ? 'Second' : p.tags.includes('gaming') ? 'Gaming' : p.tags.includes('pelajar') ? 'Pelajar' : 'Baru';
+    return '<article class="p-card' + (p.status === 'sold' ? ' is-sold' : '') + '" style="animation-delay:' + (i * 45) + 'ms">' +
+      '<div class="p-art">' + laptopArt(p) +
+        (p.tags.includes('second') ? '<span class="badge b-second"><i data-lucide="recycle"></i>Second</span>' : '') +
+        statusBadge(p) +
+        (p.status === 'sold' ? '<div class="sold-tag">Terjual</div>' : '') +
+      '</div>' +
+      '<div class="p-body">' +
+        '<div class="p-tags"><span class="p-tag">' + tag + '</span>' +
+          '<button class="p-cmp' + (compare.includes(p.id) ? ' active' : '') + '" data-cmp="' + p.id + '"><i data-lucide="git-compare"></i>Bandingkan</button>' +
+        '</div>' +
+        '<h3>' + p.name + '</h3>' +
+        '<p class="p-cpu">' + p.cpu + '</p>' +
+        '<ul class="p-specs"><li>' + p.ram + '</li><li>' + p.storage + '</li><li>' + p.display.split(' ')[0] + '</li></ul>' +
+        cond +
+        '<div class="p-foot">' +
+          '<span class="p-price">' + fmtRp(p.price) + '</span>' +
+          '<div class="p-actions">' +
+            '<button class="btn-detail" data-detail="' + p.id + '">Detail</button>' +
+            '<a class="btn-tanya" target="_blank" rel="noopener" aria-label="Tanya via WhatsApp" href="' +
+              waLink(p.status === 'sold'
+                ? 'Halo Liwa Net, saya lihat ' + p.name + ' sudah sold out. Apakah ada stok berikutnya?'
+                : 'Halo Liwa Net, saya tertarik dengan ' + p.name + ' dengan harga ' + fmtRp(p.price) + '. Apakah masih tersedia?') +
+            '"><i data-lucide="message-circle"></i></a>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }).join('');
+  icons();
+}
+
+function setCat(cat){
+  state.cat = cat;
+  $$('#catChips .fchip').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  renderGrid();
+}
+ $('#catChips').addEventListener('click', e => {
+  const b = e.target.closest('.fchip'); if(b) setCat(b.dataset.cat);
+});
+ $('#budgetChips').addEventListener('click', e => {
+  const b = e.target.closest('.fchip'); if(!b) return;
+  state.min = +b.dataset.min; state.max = +b.dataset.max;
+  $$('#budgetChips .fchip').forEach(x => x.classList.toggle('active', x === b));
+  renderGrid();
+});
+ $('#searchInput').addEventListener('input', e => {
+  state.q = e.target.value.trim().toLowerCase();
+  renderGrid();
+});
+
+/* ============ DETAIL PRODUK (MODAL) ============ */
+function openProduct(id){
+  const p = PRODUCTS.find(x => x.id === id); if(!p) return;
+  const m = STATUS_META[p.status];
+  const specs = [
+    ['CPU', p.cpu], ['GPU', p.gpu], ['RAM', p.ram], ['Storage', p.storage],
+    ['Display', p.display], ['OS', p.os],
+    p.cond ? ['Kondisi', p.cond + '% — ' + p.condLabel] : ['Status', m.label]
+  ];
+  const waMsg = p.status === 'sold'
+    ? 'Halo Liwa Net, saya tertarik dengan ' + p.name + ' (' + fmtRp(p.price) + '). Apakah ada stok berikutnya?'
+    : 'Halo Liwa Net, saya tertarik dengan ' + p.name + ' dengan harga ' + fmtRp(p.price) + '. Apakah masih tersedia?';
+  $('#pmPanel').innerHTML =
+    '<button class="m-close" data-close aria-label="Tutup"><i data-lucide="x"></i></button>' +
+    '<div class="pm-grid">' +
+      '<div class="pm-art">' + laptopArt(p) +
+        (p.tags.includes('second') ? '<span class="badge b-second"><i data-lucide="recycle"></i>Second</span>' : '') +
+        statusBadge(p) +
+      '</div>' +
+      '<div class="pm-info">' +
+        '<div class="pm-tagrow">' +
+          (p.tags.includes('second')
+            ? '<span class="tag st-ready"><i data-lucide="recycle"></i>Laptop Second</span>'
+            : '<span class="tag st-limited"><i data-lucide="sparkles"></i>Laptop Baru</span>') +
+          '<span class="tag ' + m.cls + '"><i data-lucide="circle"></i>' + m.label + '</span>' +
+        '</div>' +
+        '<h2>' + p.name + '</h2>' +
+        '<p class="pm-desc">' + p.desc + '</p>' +
+        '<div class="pm-price">' + fmtRp(p.price) + '</div>' +
+        (p.cond ? '<div class="pm-cond"><div class="cond-top"><span>Hasil pengecekan kondisi</span><b>' + p.cond + '% · ' + p.condLabel + '</b></div><div class="cond-bar"><i style="width:' + p.cond + '%"></i></div></div>' : '') +
+        '<div class="pm-sec"><h4>Spesifikasi</h4><dl class="spec-table">' +
+          specs.map(s => '<div class="spec-row"><dt>' + s[0] + '</dt><dd>' + s[1] + '</dd></div>').join('') +
+        '</dl></div>' +
+        (p.cond ? '<div class="pm-sec"><h4>10 Titik Pengecekan</h4><ul class="pm-checks">' +
+          CHECKS.map(c => '<li><i data-lucide="check"></i>' + c + '</li>').join('') + '</ul></div>' : '') +
+        '<div class="pm-btns">' +
+          '<a class="btn btn-wa" target="_blank" rel="noopener" href="' + waLink(waMsg) + '"><i data-lucide="message-circle"></i> Tanya Produk via WhatsApp</a>' +
+          '<button class="btn btn-ghost" data-detail-back="1">Tambah ke Perbandingan</button>' +
+        '</div>' +
+        '<div class="pm-guarantee"><i data-lucide="shield-check"></i>' +
+          (p.tags.includes('second')
+            ? 'Garansi tukar 3 hari untuk unit second · bebas tes dulu di toko'
+            : 'Garansi resmi 1 tahun · free pemasangan dasar aplikasi') +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  $('#pm').classList.add('open'); lockBody(true); icons();
+}
+grid.addEventListener('click', e => {
+  const d = e.target.closest('[data-detail]');  if(d) return openProduct(+d.dataset.detail);
+  const c = e.target.closest('[data-cmp]');     if(c) return toggleCompare(+c.dataset.cmp);
+});
+ $('#featCard').addEventListener('click', () => openProduct(9));
+ $('#pmPanel').addEventListener('click', e => {
+  if(e.target.closest('[data-close]')) return closeModal();
+  if(e.target.closest('[data-detail-back]')){ closeModal(); toggleCompare(+$('#pmPanel').querySelector('.pm-art ~ *') ? 0 : 0); }
+});
+function closeModal(){ $$('.modal').forEach(m => m.classList.remove('open')); lockBody(false); }
+ $$('.modal .m-overlay').forEach(o => o.addEventListener('click', closeModal));
+document.addEventListener('keydown', e => { if(e.key === 'Escape'){ closeModal(); $('#mMenu').classList.remove('open'); } });
+
+/* ============ COMPARE ============ */
+const compare = [];
+function toggleCompare(id){
+  const i = compare.indexOf(id);
+  if(i > -1){ compare.splice(i, 1); toast('Dihapus dari perbandingan', 'info'); }
+  else {
+    if(compare.length >= 3) return toast('Maksimal 3 laptop untuk perbandingan', 'bad');
+    compare.push(id); toast('Ditambahkan ke perbandingan');
+  }
+  updateTray(); renderGrid();
+}
+function updateTray(){
+  const tray = $('#cmpTray');
+  tray.classList.toggle('show', compare.length > 0);
+  $('#cmpGo').disabled = compare.length < 2;
+  $('#cmpGo').style.opacity = compare.length < 2 ? .55 : 1;
+  $('#cmpItems').innerHTML = compare.map(id => {
+    const p = PRODUCTS.find(x => x.id === id);
+    return '<span class="cmp-item">' + p.name.split(' ').slice(0,2).join(' ') +
+      '<button data-rm="' + id + '" aria-label="Hapus"><i data-lucide="x"></i></button></span>';
+  }).join('');
+  icons();
+}
+ $('#cmpItems').addEventListener('click', e => {
+  const b = e.target.closest('[data-rm]'); if(b) toggleCompare(+b.dataset.rm);
+});
+ $('#cmpClear').addEventListener('click', () => { compare.length = 0; updateTray(); renderGrid(); });
+ $('#cmpGo').addEventListener('click', () => { if(compare.length >= 2) openCompare(); });
+
+function parseGb(s){ const m = s.match(/(\d+)\s*GB/i); return m ? +m[1] : 0; }
+function openCompare(){
+  const items = compare.map(id => PRODUCTS.find(x => x.id === id));
+  const minPrice = Math.min(...items.map(p => p.price));
+  const maxRam = Math.max(...items.map(p => parseGb(p.ram)));
+  const maxSt = Math.max(...items.map(p => parseGb(p.storage)));
+  const row = (label, cells) => '<tr><th>' + label + '</th>' + cells.map(c => '<td>' + c + '</td>').join('') + '</tr>';
+  const cl = (v, best, cls) => v === best ? ' class="' + cls + '"' : '';
+  $('#cmBody').innerHTML = '<table class="cmp-table"><thead><tr><th>Model</th>' +
+    items.map(p => '<td><b>' + p.name + '</b><br><small style="color:var(--dim)">' + (p.cond ? p.cond + '% · ' + p.condLabel : 'Unit Baru') + '</small></td>').join('') +
+    '</tr></thead><tbody>' +
+    row('Harga', items.map(p => '<span' + cl(p.price, minPrice, 'best-ok') + '>' + fmtRp(p.price) + '</span>')) +
+    row('CPU', items.map(p => p.cpu)) +
+    row('GPU', items.map(p => p.gpu)) +
+    row('RAM', items.map(p => '<span' + cl(parseGb(p.ram), maxRam, 'best-top') + '>' + p.ram + '</span>')) +
+    row('Storage', items.map(p => '<span' + cl(parseGb(p.storage), maxSt, 'best-top') + '>' + p.storage + '</span>')) +
+    row('Display', items.map(p => p.display)) +
+    row('OS', items.map(p => p.os)) +
+    row('Status', items.map(p => STATUS_META[p.status].label)) +
+    row('Tanya', items.map(p => '<a class="btn-tanya" style="display:inline-grid" target="_blank" rel="noopener" href="' +
+      waLink('Halo Liwa Net, saya tertarik dengan ' + p.name + ' dengan harga ' + fmtRp(p.price) + '. Apakah masih tersedia?') +
+      '"><i data-lucide="message-circle"></i></a>')) +
+    '</tbody></table>';
+  $('#cm').classList.add('open'); lockBody(true); icons();
+}
+
+/* ============ BOOKING SERVICE ============ */
+const phoneOk = v => /^(\+?62|0)8\d{7,12}$/.test(v.replace(/[\s-]/g, ''));
+function fieldErr(el, bad){ el.closest('.field').classList.toggle('err', bad); return bad; }
+ $('#bookingForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const nama = $('#bkNama'), wa = $('#bkWa'), kel = $('#bkKeluhan');
+  let bad = false;
+  bad = fieldErr(nama, !nama.value.trim()) || bad;
+  bad = fieldErr(wa, !phoneOk(wa.value)) || bad;
+  bad = fieldErr(kel, kel.value.trim().length < 10) || bad;
+  if(bad) return toast('Lengkapi form yang ditandai merah', 'bad');
+  const jenis = $('#bkJenis').value, merk = $('#bkMerk').value.trim(), model = $('#bkModel').value.trim();
+  const device = [jenis, merk, model].filter(Boolean).join(' ');
+  const msg = 'Halo Liwa Net, saya ingin booking service.\n\n' +
+    'Nama: ' + nama.value.trim() + '\n' +
+    'No. WA: ' + wa.value.trim() + '\n' +
+    'Perangkat: ' + device + '\n' +
+    'Keluhan: ' + kel.value.trim();
+  const id = 'LWN-26' + String(Math.floor(100 + Math.random() * 900));
+  window.open(waLink(msg), '_blank');
+  const ok = $('#bkSuccess');
+  ok.innerHTML = '<h4><i data-lucide="check-circle"></i> Permintaan terkirim</h4>' +
+    '<p>Simpan nomor servis di bawah untuk <b style="color:var(--text)">Cek Status Service</b>, dan tunjukkan saat datang ke toko.</p>' +
+    '<div class="svc-id-row"><span class="svc-id">#' + id + '</span>' +
+    '<button class="copy-btn" data-copy="' + id + '"><i data-lucide="copy"></i> Salin</button></div>';
+  ok.classList.add('show'); icons();
+  toast('Mengarahkan ke WhatsApp…', 'info');
+  e.target.reset();
+});
+document.addEventListener('click', e => {
+  const c = e.target.closest('[data-copy]'); if(!c) return;
+  navigator.clipboard?.writeText(c.dataset.copy).then(() => toast('Nomor servis disalin'));
+});
+
+/* ============ CEK STATUS SERVICE ============ */
+const STEPS = [
+  {l:'Perangkat Diterima',  i:'inbox'},
+  {l:'Sedang Dicek',        i:'search'},
+  {l:'Sedang Diperbaiki',   i:'wrench'},
+  {l:'Testing',             i:'flask-conical'},
+  {l:'Selesai',             i:'check'},
+  {l:'Siap Diambil',        i:'package-check'}
+];
+const SERVICES = {
+  'LWN-26001': {device:'ASUS VivoBook 14', step:3, updated:'Hari ini · 13.20', note:'Penggantian thermal paste & fan cleaning. Menunggu tes suhu akhir.'},
+  'LWN-26002': {device:'Epson L3210', step:4, updated:'Hari ini · 10.05', note:'Head cleaning selesai, sedang tes cetak 20 halaman.'},
+  'LWN-26003': {device:'Lenovo IdeaPad 3', step:6, updated:'Kemarin · 16.40', note:'Sudah bisa diambil di toko pada jam operasional.'},
+  'LWN-26004': {device:'HP 14s', step:1, updated:'Hari ini · 09.15', note:'Perangkat sudah masuk antrean, akan segera dicek teknisi.'}
+};
+function checkStatus(){
+  const inp = $('#statusInput');
+  const code = inp.value.trim().toUpperCase();
+  if(!code){ inp.classList.add('shake'); setTimeout(() => inp.classList.remove('shake'), 450); return; }
+  const data = SERVICES[code];
+  $('#statusNotFound').classList.toggle('show', !data);
+  const box = $('#statusResult');
+  if(!data){ box.classList.remove('show'); box.innerHTML = ''; return; }
+  box.innerHTML =
+    '<div class="sr-device"><b>' + data.device + '</b><span>Terakhir diperbarui: ' + data.updated + '</span></div>' +
+    '<ul class="steps">' +
+      STEPS.map((s, i) => {
+        const st = i < data.step ? 'done' : i === data.step ? 'current' : '';
+        return '<li class="' + st + '"><span class="step-dot"><i data-lucide="' + s.i + '"></i></span>' +
+          '<div class="step-body"><b>' + s.l + '</b><span>' +
+          (i < data.step ? 'Selesai' : i === data.step ? 'Sedang berlangsung' : 'Menunggu') +
+          '</span></div></li>';
+      }).join('') +
+    '</ul>' +
+    '<div class="sr-note"><b>Catatan teknisi:</b> ' + data.note + '</div>';
+  box.classList.add('show'); icons();
+}
+ $('#statusBtn').addEventListener('click', checkStatus);
+ $('#statusInput').addEventListener('keydown', e => { if(e.key === 'Enter') checkStatus(); });
+ $$('.status-hint b').forEach(b => b.addEventListener('click', () => {
+  $('#statusInput').value = b.dataset.demo; checkStatus();
+}));
+
+/* ============ TRADE-IN ============ */
+ $('#tradeForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const model = $('#trModel'), wa = $('#trWa');
+  let bad = false;
+  bad = fieldErr(model, !model.value.trim()) || bad;
+  bad = fieldErr(wa, !phoneOk(wa.value)) || bad;
+  if(bad) return toast('Lengkapi form yang ditandai merah', 'bad');
+  const extras = $$('#tradeForm .chk input:checked').map(c => c.value).join(', ') || 'Unit saja';
+  const note = $('#trNote').value.trim();
+  const msg = 'Halo Liwa Net, saya ingin jual laptop bekas.\n\n' +
+    'Merk/Model: ' + model.value.trim() + '\n' +
+    'Kondisi: ' + $('#trKondisi').value + '\n' +
+    'RAM: ' + $('#trRam').value + '\n' +
+    'Storage: ' + $('#trStorage').value + '\n' +
+    'Kelengkapan: ' + extras + '\n' +
+    'No. WA: ' + wa.value.trim() +
+    (note ? '\nCatatan: ' + note : '');
+  window.open(waLink(msg), '_blank');
+  toast('Detail laptopmu dikirim ke WhatsApp', 'ok');
+  e.target.reset();
+});
+
+/* ============ ULASAN SLIDER ============ */
+const REVIEWS = [
+  {name:'Jawan', role:'Beli Laptop Second', text:'Pelayanannya ramah dan laptopnya sesuai dengan yang dijelaskan. Diberi waktu cek dulu sebelum bayar — jadi tenang.', stars:5},
+  {name:'Siti Rahma', role:'Service Laptop', text:'Laptop cepat panas langsung diperbaiki dalam sehari. Thermal paste diganti, sekarang adem lagi. Recommended!', stars:5},
+  {name:'Andi Pratama', role:'Beli Laptop Baru', text:'Dibantu pilih laptop sesuai budget kuliah, tidak dipaksa yang mahal. Garansinya jelas dan purna jualnya responsif.', stars:5},
+  {name:'Pak Hermansyah', role:'Service Printer', text:'Printer Epson saya hasil cetaknya bergaris. Ternyata headnya cuma perlu dibersihkan — langsung normal, harga wajar.', stars:4},
+  {name:'Dedi Kurniawan', role:'Jual Laptop Bekas', text:'Jual laptop lama ke Liwa Net, harganya masuk akal dan prosesnya cepat. Bayar tunai di tempat, tidak ribet.', stars:5}
+];
+let tIdx = 0, tTimer;
+function starRow(n){
+  return Array.from({length:5}, (_, i) => '<i data-lucide="star"' + (i < n ? ' style="opacity:1"' : ' style="opacity:.22"') + '></i>').join('');
+}
+function renderReviews(){
+  $('#tTrack').innerHTML = REVIEWS.map((r, i) => {
+    const init = r.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+    return '<div class="t-slide' + (i === 0 ? ' active' : '') + '">' +
+      '<div class="t-quote-ico"><i data-lucide="quote"></i></div>' +
+      '<div class="t-stars">' + starRow(r.stars) + '</div>' +
+      '<blockquote>"' + r.text + '"</blockquote>' +
+      '<div class="t-who"><span class="t-ava">' + init + '</span><div><b>' + r.name + '</b><span>' + r.role + ' · Pelanggan Liwa Net</span></div></div>' +
+    '</div>';
+  }).join('');
+  $('#tDots').innerHTML = REVIEWS.map((_, i) =>
+    '<button class="t-dot' + (i === 0 ? ' active' : '') + '" data-t="' + i + '" aria-label="Ulasan ' + (i+1) + '"></button>').join('');
+  icons(); setSlide(0, false);
+}
+function setSlide(i, scroll = true){
+  tIdx = (i + REVIEWS.length) % REVIEWS.length;
+  $$('#tTrack .t-slide').forEach((s, k) => s.classList.toggle('active', k === tIdx));
+  $$('#tDots .t-dot').forEach((d, k) => d.classList.toggle('active', k === tIdx));
+  const active = $('#tTrack .t-slide.active');
+  if(active) $('#tTrack').style.height = active.offsetHeight + 'px';
+  if(scroll) restartAuto();
+}
+function restartAuto(){ clearInterval(tTimer); tTimer = setInterval(() => setSlide(tIdx + 1, false), 6500); }
+ $('#tPrev').addEventListener('click', () => setSlide(tIdx - 1));
+ $('#tNext').addEventListener('click', () => setSlide(tIdx + 1));
+ $('#tDots').addEventListener('click', e => {
+  const d = e.target.closest('[data-t]'); if(d) setSlide(+d.dataset.t);
+});
+ $('.t-wrap').addEventListener('mouseenter', () => clearInterval(tTimer));
+ $('.t-wrap').addEventListener('mouseleave', restartAuto);
+window.addEventListener('resize', () => setSlide(tIdx, false));
+
+/* ============ NAV: SCROLL, SPY, MENU MOBILE ============ */
+const nav = $('#nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+  // scroll spy
+  let cur = 'beranda';
+  for(const id of ['beranda','laptop','service','tentang','lokasi']){
+    const el = document.getElementById(id);
+    if(el && el.getBoundingClientRect().top <= 120) cur = id;
+  }
+  $$('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.spy === cur));
+}, {passive:true});
+ $('#burger').addEventListener('click', () => {
+  const m = $('#mMenu'); m.classList.toggle('open');
+  $('#burger').innerHTML = '<i data-lucide="' + (m.classList.contains('open') ? 'x' : 'menu') + '"></i>'; icons();
+});
+ $$('#mMenu a').forEach(a => a.addEventListener('click', () => {
+  $('#mMenu').classList.remove('open');
+  $('#burger').innerHTML = '<i data-lucide="menu"></i>'; icons();
+}));
+
+/* Shortcut kategori dari semua elemen data-goto-cat / data-goto-service */
+document.addEventListener('click', e => {
+  const c = e.target.closest('[data-goto-cat]');
+  if(c){ setCat(c.dataset.gotoCat); return; }
+  const s = e.target.closest('[data-goto-service]');
+  if(s){ $('#bkJenis').value = s.dataset.gotoService; }
+});
+
+/* ============ REVEAL ON SCROLL ============ */
+const io = new IntersectionObserver(es => es.forEach(en => {
+  if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+}), {threshold:.12});
+ $$('.rv').forEach(el => io.observe(el));
+
+/* ============ COUNT-UP STATISTIK ============ */
+const ioStat = new IntersectionObserver(es => es.forEach(en => {
+  if(!en.isIntersecting) return;
+  ioStat.unobserve(en.target);
+  const el = en.target, t = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), sfx = el.dataset.suffix || '';
+  const st = performance.now(), dur = 1400;
+  (function tick(n){
+    const p = Math.min(1, (n - st) / dur), e = 1 - Math.pow(1 - p, 3), v = t * e;
+    el.textContent = (dec ? v.toFixed(dec) : Math.round(v)) + sfx;
+    if(p < 1) requestAnimationFrame(tick);
+  })(st);
+}), {threshold:.5});
+ $$('.stat b[data-count]').forEach(el => ioStat.observe(el));
+
+/* ============ HERO BOOT SEQUENCE ============ */
+(function boot(){
+  const logo = $('#hlLogo'), bar = $('#hlBar'), msg = $('#hlMsg');
+  setTimeout(() => logo.classList.add('on'), 350);
+  setTimeout(() => { bar.classList.add('on', 'run'); }, 800);
+  const msgs = ['Memeriksa perangkat keras…', 'Memuat driver…', 'Mengoptimalkan performa…'];
+  msgs.forEach((m, i) => setTimeout(() => {
+    if(msg.classList.contains('done')) return;
+    msg.textContent = m; msg.classList.add('on');
+  }, 1000 + i * 850));
+  setTimeout(() => {
+    bar.style.transition = 'opacity .5s'; bar.style.opacity = '0';
+    msg.classList.add('done');
+    msg.innerHTML = '<i data-lucide="check"></i> Semua sistem siap — selamat datang di Liwa Net';
+    icons();
+  }, 3700);
+})();
+
+/* ============ MARQUEE BRAND ============ */
+(function marquee(){
+  const brands = ['ASUS','Lenovo','HP','Dell','Acer','MSI','Epson','Canon'];
+  const row = brands.map(b => '<span>' + b + '</span>').join('');
+  $('#marqTrack').innerHTML = row + row; // duplikasi untuk loop mulus
+})();
+
+/* ============ LINK & INISIALISASI ============ */
+const waHi = waLink('Halo Liwa Net, saya mau tanya-tanya dulu soal laptop / service.');
+['navWa','fabWa','btnWa1'].forEach(id => { const el = document.getElementById(id); if(el) el.href = waHi; });
+ $$('.navWa2').forEach(a => a.href = waHi);
+['btnReview','btnReview2','btnReview3'].forEach(id => { const el = document.getElementById(id); if(el) el.href = REVIEW_URL; });
+['btnMaps1'].forEach(id => { const el = document.getElementById(id); if(el) el.href = GMAPS_URL; });
+ $('#heroStars').innerHTML = '<i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>';
+
+/* Checklist second section */
+ $('#checkGrid').innerHTML = CHECKS.map(c =>
+  '<div class="check-item"><i data-lucide="check"></i>' + c + '</div>').join('');
+
+/* Kartu second unggulan */
+(function featured(){
+  const p = PRODUCTS.find(x => x.id === 9);
+  $('#featCard').innerHTML =
+    '<div class="p-art">' + laptopArt(p) +
+      '<span class="badge b-second"><i data-lucide="recycle"></i>Second</span>' +
+      '<span class="badge b-status st-ready">Ready</span>' +
+    '</div>' +
+    '<div class="feat-body">' +
+      '<div class="feat-top"><span class="p-tag">Unit Unggulan Minggu Ini</span></div>' +
+      '<h3 style="font-size:19px;margin-bottom:4px">' + p.name + '</h3>' +
+      '<p class="p-cpu">' + p.cpu + ' · ' + p.ram + ' · ' + p.storage + '</p>' +
+      '<div class="cond" style="margin-top:14px"><div class="cond-top"><span>Kondisi hasil cek</span><b>' + p.cond + '% · ' + p.condLabel + '</b></div><div class="cond-bar"><i style="width:' + p.cond + '%"></i></div></div>' +
+      '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px">' +
+        '<span class="p-price" style="font-size:21px">' + fmtRp(p.price) + '</span>' +
+        '<span class="btn btn-primary btn-sm">Lihat Detail</span>' +
+      '</div>' +
+      '<div class="feat-note"><i data-lucide="shield-check"></i>Garansi tukar 3 hari · bebas tes &amp; cek di toko sebelum beli</div>' +
+    '</div>';
+})();
+
+renderGrid();
+renderReviews();
+updateTray();
+icons();
+</script>
+</body>
+</html>
